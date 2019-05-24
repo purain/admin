@@ -15,67 +15,74 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'js/app.js'
   },
+  resolve: {
+    alias: {
+      page     : path.resolve(__dirname, 'src/page'),
+      component: path.resolve(__dirname, 'src/component')
+    }
+  },
   module: {
-	rules: [
-	  //react(jsx)
-	  {
-	    test: /\.m?jsx$/,
-	    exclude: /(node_modules)/,
-	    use: {
-	      loader: 'babel-loader',
-	      options: {
-	        presets: ['env', 'react']
-	      }
-	    }
-	  },
-	  // css
-	  {
-	  	test: /\.css$/,
-	  	use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
-	  },
-	  // sass
-	  {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
-      },
-      // 图片的配置
-      {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'resource/[name].[ext]'
+  	rules: [
+  	  //react(jsx)
+  	  {
+  	    test: /\.m?jsx$/,
+  	    exclude: /(node_modules)/,
+  	    use: {
+  	      loader: 'babel-loader',
+  	      options: {
+  	        presets: ['env', 'react']
+  	      }
+  	    }
+  	  },
+  	  // css
+  	  {
+  	  	test: /\.css$/,
+  	  	use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: "css-loader"
+          })
+  	  },
+  	  // sass
+  	  {
+          test: /\.scss$/,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'sass-loader']
+          })
+        },
+        // 图片的配置
+        {
+          test: /\.(png|jpg|gif)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+                name: 'resource/[name].[ext]'
+              }
             }
-          }
-        ]
-      },
-      // 字体处理
-      {
-        test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'resource/[name].[ext]'
+          ]
+        },
+        // 字体处理
+        {
+          test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+                name: 'resource/[name].[ext]'
+              }
             }
-          }
-        ]
-      }
-	]
+          ]
+        }
+  	]
   },
   plugins: [
     // 处理 html 文件
   	new HtmlWebpackPlugin({
-  		template: './src/index.html'
+  		template: './src/index.html',
+      favicon: './favicon.ico'
   	}),
   	// 独立 css 文件
   	new ExtractTextPlugin("css/[name].css"),
@@ -86,6 +93,9 @@ module.exports = {
   	})
   ],
   devServer: {
-  	port: 8086
+  	port: 8086,
+    historyApiFallback: {
+      index: '/dist/index.html'
+    }
   }
 };
