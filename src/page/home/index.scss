@@ -1,0 +1,36 @@
+/*
+* @Author: purain
+* @Date:   2019-05-23 15:58:11
+* @Last Modified by:   purain
+* @Last Modified time: 2019-05-25 19:04:21
+* @E-mail: 1073357107@qq.com
+*/
+.down {
+	padding: 50px 10px;
+}
+.color-box {
+	display: block;
+	height: 160px;
+	text-align: center;
+	opcaity: .9;
+	transition: all .3s;
+	&:hover {
+		text-decoration: none;
+		color: #555;
+		transform: scale(1.08);
+	}
+	&:focus {
+		text-decoration: none;
+	}
+	.count {
+		font-size: 50px;
+		height: 50%;
+		line-height: 80px;
+	}
+	.desc {
+		font-size: 18px;
+		.fa {
+			margin-right: 5px;
+		}
+	}
+}
