@@ -10,7 +10,7 @@ class PageTitle extends React.Component{
 	render(){
 		return (
 			<div className="row">
-				<div className="col md-12">
+				<div className="col-md-12">
 					<h1 className="page-header">{this.props.title}</h1>
 					{this.props.children}
 				</div>
