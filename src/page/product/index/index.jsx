@@ -7,7 +7,7 @@ import MUtil 		from 'util/mm.jsx';
 import TableList 	from 'util/table-list/index.jsx';
 import ListSearch 	from './index-list-search.jsx';
 import Product 		from 'service/product-service.jsx';
-import ProductSave 		from 'page/product/index/save.jsx';
+import ProductSave 	from 'page/product/index/save.jsx';
 
 import './index.scss';
 
