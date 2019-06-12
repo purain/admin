@@ -55,19 +55,19 @@ class OrderDetail extends React.Component{
 				<PageTitle title="订单详情" />
 				<div className="form-horizontal">
 				  <div className="form-group">
-				    <label className="col-md-1 control-label">订单号</label>
+				    <label className="col-md-2 control-label">订单号</label>
 				    <div className="col-md-5">
 				      <p className="form-control-static">{this.state.orderInfo.orderNo}</p>
 				    </div>
 				  </div>
 				  <div className="form-group">
-				    <label className="col-md-1 control-label">创建时间</label>
+				    <label className="col-md-2 control-label">创建时间</label>
 				    <div className="col-md-5">
 				      <p className="form-control-static">{this.state.orderInfo.createTime}</p>
 				    </div>
 				  </div>
 				  <div className="form-group">
-				    <label className="col-md-1 control-label">收件人</label>
+				    <label className="col-md-2 control-label">收件人</label>
 				    <div className="col-md-5">
 				      <p className="form-control-static">
 						{receiverInfo.receiverName}，
@@ -78,7 +78,7 @@ class OrderDetail extends React.Component{
 				    </div>
 				  </div>
 				  <div className="form-group">
-				    <label className="col-md-1 control-label">状态</label>
+				    <label className="col-md-2 control-label">状态</label>
 				    <div className="col-md-5">
 				      <p className="form-control-static">
 				      	{this.state.orderInfo.statusDesc}
@@ -92,19 +92,19 @@ class OrderDetail extends React.Component{
 				    </div>
 				  </div>
 				  <div className="form-group">
-				    <label className="col-md-1 control-label">支付方式</label>
+				    <label className="col-md-2 control-label">支付方式</label>
 				    <div className="col-md-5">
 				      <p className="form-control-static">{this.state.orderInfo.paymentTypeDesc}</p>
 				    </div>
 				  </div>
 				  <div className="form-group">
-				    <label className="col-md-1 control-label">订单总价</label>
+				    <label className="col-md-2 control-label">订单总价</label>
 				    <div className="col-md-5">
 				      <p className="form-control-static">￥{this.state.orderInfo.payment}</p>
 				    </div>
 				  </div>
 				  <div className="form-group">
-				  	<label className="col-md-1 control-label">商品列表</label>
+				  	<label className="col-md-2 control-label">商品列表</label>
 				  	<div className="col-md-10">
 					  <TableList tableHeads={tableHeads}>
 					  {
