@@ -49,38 +49,38 @@ module.exports = {
   	  },
   	  // sass
   	  {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          })
-        },
-        // 图片的配置
-        {
-          test: /\.(png|jpg|gif)$/i,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                limit: 8192,
-                name: 'resource/[name].[ext]'
-              }
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
+      },
+      // 图片的配置
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: 'resource/[name].[ext]'
             }
-          ]
-        },
-        // 字体处理
-        {
-          test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                limit: 8192,
-                name: 'resource/[name].[ext]'
-              }
+          }
+        ]
+      },
+      // 字体处理
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: 'resource/[name].[ext]'
             }
-          ]
-        }
+          }
+        ]
+      }
   	]
   },
   plugins: [
