@@ -6,9 +6,9 @@
   "author": "purain <1073357107@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev"      : "node_modules/.bin/webpack-dev-server",
-    "dist"     : "WEBPACK_ENV=online node_modules/.bin/webpack -p",
-    "dist_win" : "set WEBPACK_ENV=online&& node_modules/.bin/webpack -p"
+    "dev": "node_modules/.bin/webpack-dev-server",
+    "dist": "WEBPACK_ENV=online node_modules/.bin/webpack -p",
+    "dist_win": "set WEBPACK_ENV=online&& node_modules/.bin/webpack -p"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -27,6 +27,7 @@
     "webpack-dev-server": "2.9.7"
   },
   "dependencies": {
+    "postcss-loader": "^3.0.0",
     "prop-types": "15.6.0",
     "rc-pagination": "1.15.1",
     "react": "16.2.0",
